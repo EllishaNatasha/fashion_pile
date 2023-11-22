@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fashion_pile/widgets/left_drawer.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 
 class ItemFormPage extends StatefulWidget {
   const ItemFormPage({super.key});
@@ -16,6 +18,7 @@ class _ItemFormPageState extends State<ItemFormPage> {
 
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
     return Scaffold(
       appBar: AppBar(
         title: const Center(

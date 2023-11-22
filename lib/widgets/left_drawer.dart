@@ -1,3 +1,4 @@
+import 'package:fashion_pile/screens/list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:fashion_pile/screens/menu.dart';
 import 'package:fashion_pile/screens/itemlist_form.dart';
@@ -53,7 +54,7 @@ class LeftDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.add_shopping_cart),
-            title: const Text('Tambah Produk'),
+            title: const Text('Tambah Item'),
             // Bagian redirection ke ItemFormPage
             onTap: () {
               Navigator.pushReplacement(
@@ -63,6 +64,18 @@ class LeftDrawer extends StatelessWidget {
                   ));
             },
           ),
+
+          ListTile(
+            leading: const Icon(Icons.shopping_basket),
+            title: const Text('Daftar Item'),
+            onTap: () {
+                // Route menu ke halaman produk
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ItemPage()),
+                );
+            },
+        ),
         ],
       ),
     );
